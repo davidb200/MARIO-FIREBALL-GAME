@@ -35,15 +35,11 @@ void Enemy::moveEnemy() {
 bool Enemy::collidesWithPlayer(sf::Sprite &player, sf::Sprite &enemy) {
 
     bool collides = player.getGlobalBounds().intersects(enemy.getGlobalBounds());
-
+    // Did Something here, hi there
     if(collides) {
         x = float(rand() % 600);
         y = 50.f;
         return true;
     }
     return false;
-}
-
-void Enemy::Hello(){
-    std::cout << "Hello" << std::endl;
 }
