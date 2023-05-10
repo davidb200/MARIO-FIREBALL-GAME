@@ -22,3 +22,5 @@
 23	759	7054415792958423	CMakeFiles/SFML_Practice.dir/src/Player.cpp.obj	a4342df1e47530dd
 12	773	7054415793104308	CMakeFiles/SFML_Practice.dir/src/Window.cpp.obj	8425b6d150575001
 774	1489	7054415800130482	SFML_Practice.exe	c50abbd32b98ccd
+4	513	7054426301205605	CMakeFiles/SFML_Practice.dir/src/Enemy.cpp.obj	a3f143984f4ec029
+514	1192	7054426307882047	SFML_Practice.exe	c50abbd32b98ccd

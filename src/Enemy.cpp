@@ -36,6 +36,8 @@ bool Enemy::collidesWithPlayer(sf::Sprite &player, sf::Sprite &enemy) {
 
     bool collides = player.getGlobalBounds().intersects(enemy.getGlobalBounds());
     // Did Something here, hi there
+    // Fixed Collision Detection
+    // Player collision branch
     if(collides) {
         x = float(rand() % 600);
         y = 50.f;
