@@ -9,7 +9,6 @@ Player :: Player(){
 
 }
 
-
 bool Player::isDamaged(sf::Sprite &player, sf::Sprite &enemy) {
 
     bool damaged = player.getGlobalBounds().intersects(enemy.getGlobalBounds());
@@ -27,6 +26,9 @@ bool Player::addToScore(){
 
 
 
+}
+void Player::printHello() {
+    std::cout << "Hello" << std::endl;
 }
 
 bool Player::checkOutOfBounds() {

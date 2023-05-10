@@ -2,7 +2,7 @@
 #define MAIN_CPP_PLAYER_H
 #include <SFML/Graphics.hpp>
 #include "../headers/Enemy.h"
-
+#include <iostream>
 
 class Player{
 
@@ -35,7 +35,7 @@ public:
     void moveRight();
     void moveLeft();
     void moveUp();
-
+    void printHello();
 };
 
 

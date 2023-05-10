@@ -5,14 +5,14 @@
 void Window::RunWindow() {
 
     sf::RenderWindow window(sf::VideoMode(600,600), "My Game");
-
+    std::cout << "Hello" << std::endl;
     ///////////////////////////////////// Texts//////////////////////////////////////////////////////////////
 
     sf::Font BobaMilky;
     sf::Text healthScore;
     sf::Text health;
 
-    if(!BobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\SFML Practice\\boba_milky\\Boba Milky.ttf"))
+    if(!BobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\boba_milky\\Boba Milky.ttf"))
         std::cout << "Failed to load font!" << std::endl;
 
     healthScore.setFont(BobaMilky);
@@ -32,7 +32,7 @@ void Window::RunWindow() {
     //////////////////////////////////////Images///////////////////////////////////////////////////////////
     //  Player Image
     sf::Texture mainMenuImage;
-    if(!mainMenuImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\SFML Practice\\Images\\square.png"))
+    if(!mainMenuImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\Images\\square.png"))
         std::cout << "Failed to load player" << std:: endl;
 
     sf::Sprite sprite(mainMenuImage);
@@ -42,7 +42,7 @@ void Window::RunWindow() {
 
     // EnemyTexture Image
     sf::Texture EnemyTexture;
-    if(!EnemyTexture.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\SFML Practice\\Images\\Enemy.png"))
+    if(!EnemyTexture.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\Images\\Enemy.png"))
         std::cout << "Failed to load EnemyTexture" << std:: endl;
 
     sf::Sprite sprite2(EnemyTexture);
@@ -52,7 +52,7 @@ void Window::RunWindow() {
 
     // Ground
     sf::Texture ground;
-    if(!ground.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\SFML Practice\\Images\\ground.png"))
+    if(!ground.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\Images\\ground.png"))
         std::cout << "Failed to load barrel images" << std::endl;
 
     sf::Sprite sprite3(ground);

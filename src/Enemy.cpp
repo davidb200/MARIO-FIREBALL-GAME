@@ -43,3 +43,7 @@ bool Enemy::collidesWithPlayer(sf::Sprite &player, sf::Sprite &enemy) {
     }
     return false;
 }
+
+void Enemy::Hello(){
+    std::cout << "Hello" << std::endl;
+}

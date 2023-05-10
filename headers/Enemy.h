@@ -21,6 +21,7 @@ public:
 
     bool isOutOfMap();
     bool collidesWithPlayer(sf::Sprite &player, sf::Sprite &enemy);
+    void Hello();
 
 };
 
