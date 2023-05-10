@@ -7,7 +7,6 @@
 class Player{
 
 private:
-    int health = 100;
     int score = 0;
 
 
@@ -21,10 +20,8 @@ public:
 
     Player();
 
-    bool isDamaged(sf::Sprite &player, sf::Sprite &enemy);
     bool checkOutOfBounds();
     void updateMovement();
-    int getHealth();
 
     int getScore();
     bool addToScore();
@@ -35,7 +32,6 @@ public:
     void moveRight();
     void moveLeft();
     void moveUp();
-    void printHello();
 };
 
 

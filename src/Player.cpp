@@ -7,29 +7,13 @@ Player :: Player(){
     velocityY = 0.f;
     gravity = 0.005f;
 
-}
-
-bool Player::isDamaged(sf::Sprite &player, sf::Sprite &enemy) {
-
-    bool damaged = player.getGlobalBounds().intersects(enemy.getGlobalBounds());
-
-    if (damaged){
-        health = health - 50;
-        player.setPosition(200.f, 450.f);
-        return damaged;
-    }
-
-    return damaged;
-} // End of isDamaged
-
-bool Player::addToScore(){
-
-
 
 }
-void Player::printHello() {
-    std::cout << "Hello" << std::endl;
-}
+
+
+bool Player::addToScore(){return true;}
+
+
 
 bool Player::checkOutOfBounds() {
 
@@ -51,7 +35,6 @@ bool Player::checkOutOfBounds() {
 
 } // End of checkOutOfBounds
 
-int Player:: getHealth(){return health;} // End of getHealth
 
 int Player:: getScore(){return score;} // End of getScore
 
@@ -62,6 +45,7 @@ void Player::updateMovement() {
     }
     else if(y >= 450.f)
         y = 450.f;
+
 
     x += velocityX;
     y += velocityY;

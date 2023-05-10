@@ -3,7 +3,7 @@
 #define MAIN_CPP_GAMELOGIC_H
 #include "Player.h"
 
-class GameLogic : public Player{
+class GameLogic {
 private:
     bool GameOver = false;
     int score = 0;

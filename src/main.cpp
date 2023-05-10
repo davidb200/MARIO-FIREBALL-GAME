@@ -4,6 +4,5 @@ int main() {
 
     Window window;
     window.RunWindow();
-
-   return 0;
+    return 0;
 }

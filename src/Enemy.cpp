@@ -39,9 +39,12 @@ bool Enemy::collidesWithPlayer(sf::Sprite &player, sf::Sprite &enemy) {
     // Fixed Collision Detection
     // Player collision branch
     if(collides) {
+        playerHealth = playerHealth - 50;
         x = float(rand() % 600);
         y = 50.f;
         return true;
     }
     return false;
 }
+
+int Enemy:: getPlayerHealth(){return playerHealth;}
