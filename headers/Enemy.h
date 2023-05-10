@@ -11,6 +11,8 @@ private:
     float velocityY;
     float gravity;
 
+    int playerHealth = 100;
+
 public:
     Enemy();
 
@@ -22,6 +24,8 @@ public:
     bool isOutOfMap();
     bool collidesWithPlayer(sf::Sprite &player, sf::Sprite &enemy);
     void Hello();
+
+    int getPlayerHealth();
 
 };
 

@@ -89,6 +89,8 @@ void Window::RunWindow() {
             player.moveRight();
         }
 
+        //healthScore.setString(std::to_string(player.getHealth()));
+
         player.updateMovement();
         sprite.setPosition(player.getXPosition(), player.getYPosition());
 
@@ -100,9 +102,8 @@ void Window::RunWindow() {
 
         player.checkOutOfBounds();
 
-        healthScore.setString(std::to_string(player.getHealth()));
+        healthScore.setString(std::to_string(enemy.getPlayerHealth()));
 
-        player.isDamaged(sprite, sprite2);
 
         window.draw(health);
         window.draw(healthScore);
