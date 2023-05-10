@@ -24,3 +24,13 @@
 774	1489	7054415800130482	SFML_Practice.exe	c50abbd32b98ccd
 4	513	7054426301205605	CMakeFiles/SFML_Practice.dir/src/Enemy.cpp.obj	a3f143984f4ec029
 514	1192	7054426307882047	SFML_Practice.exe	c50abbd32b98ccd
+4	523	7054433943130407	CMakeFiles/SFML_Practice.dir/src/Enemy.cpp.obj	a3f143984f4ec029
+524	1203	7054433949817084	SFML_Practice.exe	c50abbd32b98ccd
+38	52	0	clean	56d8651f8a6cba66
+4	734	7054600260144721	CMakeFiles/SFML_Practice.dir/src/main.cpp.obj	8d96d5a2321e47ab
+27	738	7054600260207563	CMakeFiles/SFML_Practice.dir/src/GameStates.cpp.obj	3e7128a60575838f
+21	744	7054600260345582	CMakeFiles/SFML_Practice.dir/src/GameLogic.cpp.obj	db4f6dc54189c2ef
+35	779	7054600260685797	CMakeFiles/SFML_Practice.dir/src/Enemy.cpp.obj	a3f143984f4ec029
+16	817	7054600261069504	CMakeFiles/SFML_Practice.dir/src/Player.cpp.obj	a4342df1e47530dd
+10	867	7054600261571702	CMakeFiles/SFML_Practice.dir/src/Window.cpp.obj	8425b6d150575001
+867	2115	7054600273932436	SFML_Practice.exe	c50abbd32b98ccd
