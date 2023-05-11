@@ -33,7 +33,7 @@ void Enemy::moveEnemy() {
 } // End of moveEnemy
 
 bool Enemy::collidesWithPlayer(sf::Sprite &player, sf::Sprite &enemy) {
-
+    // Merge Request comment
     bool collides = player.getGlobalBounds().intersects(enemy.getGlobalBounds());
     // Did Something here, hi there
     // Fixed Collision Detection
