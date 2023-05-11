@@ -1,15 +1,13 @@
-
 #ifndef MAIN_CPP_GAMELOGIC_H
 #define MAIN_CPP_GAMELOGIC_H
-#include "Player.h"
 
-class GameLogic {
+
+class GameLogic{
 private:
-    bool GameOver = false;
     int score = 0;
 public:
+    int testHealth = 100;
     bool isGameOver();
 };
-
 
 #endif //MAIN_CPP_GAMELOGIC_H

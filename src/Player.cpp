@@ -7,12 +7,9 @@ Player :: Player(){
     velocityY = 0.f;
     gravity = 0.005f;
 
-
 }
 
-
 bool Player::addToScore(){return true;}
-
 
 
 bool Player::checkOutOfBounds() {

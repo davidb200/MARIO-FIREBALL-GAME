@@ -82,6 +82,7 @@ void Window::RunWindow() {
 
     Player player;
     Enemy enemy;
+    GameLogic game;
 
     // run the program as long as the window is open
     while (window.isOpen())
@@ -91,7 +92,7 @@ void Window::RunWindow() {
         while (window.pollEvent(event))
         {
             // "close requested" event: we close the window
-            if (event.type == sf::Event::Closed)
+            if (event.type == sf::Event::Closed || game.isGameOver())
                 window.close();
         }
 
@@ -111,9 +112,11 @@ void Window::RunWindow() {
 
         player.updateMovement();
         sprite.setPosition(player.getXPosition(), player.getYPosition());
-
         enemy.moveEnemy();
-        enemy.collidesWithPlayer(sprite, sprite2);
+
+       if(enemy.collidesWithPlayer(sprite, sprite2))
+           game.testHealth = game.testHealth - 50;
+
         sprite2.setPosition(enemy.getXPosition(), enemy.getYPosition());
 
         window.clear();
