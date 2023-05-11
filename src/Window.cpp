@@ -46,7 +46,6 @@ void Window::RunWindow() {
         std::cout << "Failed to load EnemyTexture" << std:: endl;
 
     sf::Sprite sprite2(EnemyTexture);
-    //sprite2.setPosition(float(rand() % 600) , 10.f );
     sprite2.setPosition(225.f, 50.f);
     sprite2.scale(0.1f, 0.1f);
 
@@ -58,6 +57,26 @@ void Window::RunWindow() {
     sf::Sprite sprite3(ground);
     sprite3.setPosition(0.f, 575.f);
     sprite3.setScale(3.00f,1.5f);
+
+
+    // Background Image
+    sf::Texture backgroundImage;
+    if(!backgroundImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\Images\\Background.jpg"))
+        std::cout << "Failed to load background image!" << std::endl;
+
+    sf::Sprite background(backgroundImage);
+
+    sf::Vector2u backgroundTextureSize;
+    sf::Vector2u windowSize;
+    backgroundTextureSize = backgroundImage.getSize();
+    windowSize = window.getSize();
+
+    float scaleX = (float) windowSize.x/ (float) backgroundTextureSize.x;
+    float scaleY = (float) windowSize.y / (float) backgroundTextureSize.y;
+
+    background.setTexture(backgroundImage);
+    background.setScale(scaleX, scaleY);
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -89,7 +108,6 @@ void Window::RunWindow() {
             player.moveRight();
         }
 
-        //healthScore.setString(std::to_string(player.getHealth()));
 
         player.updateMovement();
         sprite.setPosition(player.getXPosition(), player.getYPosition());
@@ -104,7 +122,8 @@ void Window::RunWindow() {
 
         healthScore.setString(std::to_string(enemy.getPlayerHealth()));
 
-
+        // Draws in the order it appears in
+        window.draw(background);
         window.draw(health);
         window.draw(healthScore);
 
