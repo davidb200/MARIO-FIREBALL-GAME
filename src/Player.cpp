@@ -57,3 +57,5 @@ void Player:: moveRight(){velocityX = 0.085f;}
 void Player:: moveLeft(){velocityX = -0.085f;}
 
 void Player:: moveUp(){velocityY = -0.5f;}
+
+void Player:: moveDown(){velocityY = 0.5f;}
