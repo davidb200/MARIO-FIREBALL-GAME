@@ -99,8 +99,10 @@ void Window::RunWindow() {
         // Key pressings
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) {
             player.moveUp();
-
+            if(player.getYPosition() < 350.f) // Player can't over jump
+                player.moveDown();
         }
+
         else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {
            player.moveLeft();
         }
