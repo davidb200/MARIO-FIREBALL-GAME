@@ -6,6 +6,7 @@
 #include "GameStates.h"
 #include "../headers/Enemy.h"
 #include "../headers/GameLogic.h"
+#include "../headers/Definitions.h"
 
 class Window{
 public:

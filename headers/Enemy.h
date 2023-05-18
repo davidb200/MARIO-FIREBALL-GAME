@@ -17,6 +17,7 @@ public:
     Enemy();
 
     void moveEnemy();
+    void addEnemy();
 
     float getXPosition();
     float getYPosition();

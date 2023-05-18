@@ -3,12 +3,12 @@
 #include <SFML/Graphics.hpp>
 #include "../headers/Enemy.h"
 #include <iostream>
+#include "../headers/Definitions.h"
 
 class Player{
 
 private:
     int score = 0;
-
 
     float x;
     float y;
@@ -21,6 +21,7 @@ public:
     Player();
 
     bool checkOutOfBounds();
+
     void updateMovement();
 
     int getScore();

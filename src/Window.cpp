@@ -4,59 +4,59 @@
 
 void Window::RunWindow() {
 
-    sf::RenderWindow window(sf::VideoMode(600,600), "My Game");
-    std::cout << "Hello" << std::endl;
+    sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH,WINDOW_HEIGHT), "My Game");
     ///////////////////////////////////// Texts//////////////////////////////////////////////////////////////
 
-    sf::Font BobaMilky;
+    sf::Font bobaMilky;
     sf::Text healthScore;
-    sf::Text health;
+    sf::Text playerhealth;
+    sf::Text gameOver;
 
-    if(!BobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\boba_milky\\Boba Milky.ttf"))
+    if(!bobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\boba_milky\\Boba Milky.ttf"))
         std::cout << "Failed to load font!" << std::endl;
 
-    healthScore.setFont(BobaMilky);
-    healthScore.setPosition(450.f, 5.f);
-    healthScore.setCharacterSize(34);
+    healthScore.setFont(bobaMilky);
+    healthScore.setPosition(PLAYER_HEALTH_SCORE_X_POS, PLAYER_HEALTH_SCORE_Y_POS);
+    healthScore.setCharacterSize(TEXT_SIZE);
     healthScore.setFillColor(sf::Color::White);
 
 
-    health.setFont(BobaMilky);
-    health.setString("Health:");
-    health.setPosition(325.f,5.f);
-    health.setCharacterSize(34);
-    health.setFillColor(sf::Color::White);
+    playerhealth.setFont(bobaMilky);
+    playerhealth.setString("Health:");
+    playerhealth.setPosition(HEALTH_X_POS, HEALTH_Y_POS);
+    playerhealth.setCharacterSize(TEXT_SIZE);
+    playerhealth.setFillColor(sf::Color::White);
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////Images///////////////////////////////////////////////////////////
     //  Player Image
-    sf::Texture mainMenuImage;
-    if(!mainMenuImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\Images\\square.png"))
+    sf::Texture mario;
+    if(!mario.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\Images\\Mario.png"))
         std::cout << "Failed to load player" << std:: endl;
 
-    sf::Sprite sprite(mainMenuImage);
+    sf::Sprite marioSprite(mario);
 
-    sprite.setPosition(200.f, 450.f);
-    sprite.scale(0.8, 0.8f);
+    marioSprite.setPosition(INITIAL_X_POS, INITIAL_Y_POS);
+    marioSprite.scale(PLAYER_SCALE_FACTOR_X, PLAYER_SCALE_FACTOR_Y);
 
-    // EnemyTexture Image
-    sf::Texture EnemyTexture;
-    if(!EnemyTexture.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\Images\\Enemy.png"))
-        std::cout << "Failed to load EnemyTexture" << std:: endl;
+    // fireball Image
+    sf::Texture fireball;
+    if(!fireball.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\Images\\Enemy.png"))
+        std::cout << "Failed to load fireball" << std:: endl;
 
-    sf::Sprite sprite2(EnemyTexture);
-    sprite2.setPosition(225.f, 50.f);
-    sprite2.scale(0.1f, 0.1f);
+    sf::Sprite fireballSprite(fireball);
+    fireballSprite.scale(ENEMY_SCALE_FACTOR_X, ENEMY_SCALE_FACTOR_Y);
 
     // Ground
     sf::Texture ground;
     if(!ground.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My Game\\Images\\ground.png"))
         std::cout << "Failed to load barrel images" << std::endl;
 
-    sf::Sprite sprite3(ground);
-    sprite3.setPosition(0.f, 575.f);
-    sprite3.setScale(3.00f,1.5f);
+    sf::Sprite groundSprite(ground);
+    groundSprite.setPosition(X_GROUND_POS, Y_GROUND_POS);
+    groundSprite.setScale(GROUND_SCALE_FACTOR_X, GROUND_SCALE_FACTOR_Y);
 
 
     // Background Image
@@ -94,6 +94,7 @@ void Window::RunWindow() {
             // "close requested" event: we close the window
             if (event.type == sf::Event::Closed || game.isGameOver())
                 window.close();
+
         }
 
         // Key pressings
@@ -104,7 +105,8 @@ void Window::RunWindow() {
         }
 
         else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {
-           player.moveLeft();
+            player.moveLeft();
+
         }
 
         else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
@@ -113,13 +115,13 @@ void Window::RunWindow() {
 
 
         player.updateMovement();
-        sprite.setPosition(player.getXPosition(), player.getYPosition());
+        marioSprite.setPosition(player.getXPosition(), player.getYPosition());
         enemy.moveEnemy();
 
-       if(enemy.collidesWithPlayer(sprite, sprite2))
+       if(enemy.collidesWithPlayer(marioSprite, fireballSprite))
            game.testHealth = game.testHealth - 50;
 
-        sprite2.setPosition(enemy.getXPosition(), enemy.getYPosition());
+        fireballSprite.setPosition(enemy.getXPosition(), enemy.getYPosition());
 
         window.clear();
 
@@ -129,12 +131,13 @@ void Window::RunWindow() {
 
         // Draws in the order it appears in
         window.draw(background);
-        window.draw(health);
+        window.draw(playerhealth);
         window.draw(healthScore);
 
-        window.draw(sprite);
-        window.draw(sprite2);
-        window.draw(sprite3);
+        window.draw(marioSprite);
+        window.draw(fireballSprite);
+        window.draw(groundSprite);
+
 
         window.display();
     }

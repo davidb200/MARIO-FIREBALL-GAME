@@ -6,7 +6,6 @@ Player :: Player(){
     velocityX = 0.f;
     velocityY = 0.f;
     gravity = 0.005f;
-
 }
 
 bool Player::addToScore(){return true;}
@@ -16,18 +15,16 @@ bool Player::checkOutOfBounds() {
 
     bool outOfBounds = false;
 
-    if (x >= 460.f) {
-        x = 460.f;
-        //spritePlayer.setPosition(player.x - 1, player.y);
+    if (x >= RIGHT_BOUND) {
+        x = RIGHT_BOUND;
         outOfBounds = true;
     }
 
-    if (x <= -1.f) {
-
-        //spritePlayer.setPosition(player.x + 1, player.y);
-        x = -1.f;
+    if (x <= LEFT_BOUND) {
+        x = LEFT_BOUND;
         outOfBounds = true;
     }
+
     return outOfBounds;
 
 } // End of checkOutOfBounds
@@ -42,7 +39,6 @@ void Player::updateMovement() {
     }
     else if(y >= 450.f)
         y = 450.f;
-
 
     x += velocityX;
     y += velocityY;

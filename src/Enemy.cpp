@@ -32,6 +32,9 @@ void Enemy::moveEnemy() {
     y += velocityY;
 } // End of moveEnemy
 
+void Enemy:: addEnemy(){
+}
+
 bool Enemy::collidesWithPlayer(sf::Sprite &player, sf::Sprite &enemy) {
     // Merge Request comment
     bool collides = player.getGlobalBounds().intersects(enemy.getGlobalBounds());
