@@ -151,7 +151,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=SFML_Practice
+CMAKE_PROJECT_NAME:STATIC=My_Game
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/Users/david/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.3739.54/bin/mingw/bin/ranlib.exe
@@ -238,6 +238,15 @@ FLAC_LIB:FILEPATH=C:/SFML-2.5.1/lib/libFLAC.a
 
 //Path to a library.
 FreeType_LIB:FILEPATH=C:/SFML-2.5.1/lib/libfreetype.a
+
+//Value Computed by CMake
+My_Game_BINARY_DIR:STATIC=C:/Users/david/OneDrive - Florida Gulf Coast University/COP 3003/My Game/cmake-build-debug
+
+//Value Computed by CMake
+My_Game_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+My_Game_SOURCE_DIR:STATIC=C:/Users/david/OneDrive - Florida Gulf Coast University/COP 3003/My Game
 
 //Path to a library.
 Ogg_LIB:FILEPATH=C:/SFML-2.5.1/lib/libogg.a
