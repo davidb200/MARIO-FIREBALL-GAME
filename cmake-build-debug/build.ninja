@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: SFML_Practice
+# Project: My_Game
 # Configurations: Debug
 # =============================================================================
 
@@ -41,79 +41,103 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target SFML_Practice
+# Object build statements for EXECUTABLE target My_Game
 
 
 #############################################
-# Order-only phony target for SFML_Practice
+# Order-only phony target for My_Game
 
-build cmake_object_order_depends_target_SFML_Practice: phony || CMakeFiles/SFML_Practice.dir
+build cmake_object_order_depends_target_My_Game: phony || CMakeFiles/My_Game.dir
 
-build CMakeFiles/SFML_Practice.dir/src/main.cpp.obj: CXX_COMPILER__SFML_Practice_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/main.cpp || cmake_object_order_depends_target_SFML_Practice
+build CMakeFiles/My_Game.dir/src/main.cpp.obj: CXX_COMPILER__My_Game_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/main.cpp || cmake_object_order_depends_target_My_Game
   DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles\SFML_Practice.dir\src\main.cpp.obj.d
+  DEP_FILE = CMakeFiles\My_Game.dir\src\main.cpp.obj.d
   FLAGS = -g -std=gnu++14
   INCLUDES = -Ic:/SFML/include -isystem C:/SFML-2.5.1/include
-  OBJECT_DIR = CMakeFiles\SFML_Practice.dir
-  OBJECT_FILE_DIR = CMakeFiles\SFML_Practice.dir\src
+  OBJECT_DIR = CMakeFiles\My_Game.dir
+  OBJECT_FILE_DIR = CMakeFiles\My_Game.dir\src
 
-build CMakeFiles/SFML_Practice.dir/src/Window.cpp.obj: CXX_COMPILER__SFML_Practice_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/Window.cpp || cmake_object_order_depends_target_SFML_Practice
+build CMakeFiles/My_Game.dir/src/StateManager.cpp.obj: CXX_COMPILER__My_Game_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/StateManager.cpp || cmake_object_order_depends_target_My_Game
   DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles\SFML_Practice.dir\src\Window.cpp.obj.d
+  DEP_FILE = CMakeFiles\My_Game.dir\src\StateManager.cpp.obj.d
   FLAGS = -g -std=gnu++14
   INCLUDES = -Ic:/SFML/include -isystem C:/SFML-2.5.1/include
-  OBJECT_DIR = CMakeFiles\SFML_Practice.dir
-  OBJECT_FILE_DIR = CMakeFiles\SFML_Practice.dir\src
+  OBJECT_DIR = CMakeFiles\My_Game.dir
+  OBJECT_FILE_DIR = CMakeFiles\My_Game.dir\src
 
-build CMakeFiles/SFML_Practice.dir/src/Player.cpp.obj: CXX_COMPILER__SFML_Practice_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/Player.cpp || cmake_object_order_depends_target_SFML_Practice
+build CMakeFiles/My_Game.dir/src/Mario.cpp.obj: CXX_COMPILER__My_Game_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/Mario.cpp || cmake_object_order_depends_target_My_Game
   DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles\SFML_Practice.dir\src\Player.cpp.obj.d
+  DEP_FILE = CMakeFiles\My_Game.dir\src\Mario.cpp.obj.d
   FLAGS = -g -std=gnu++14
   INCLUDES = -Ic:/SFML/include -isystem C:/SFML-2.5.1/include
-  OBJECT_DIR = CMakeFiles\SFML_Practice.dir
-  OBJECT_FILE_DIR = CMakeFiles\SFML_Practice.dir\src
+  OBJECT_DIR = CMakeFiles\My_Game.dir
+  OBJECT_FILE_DIR = CMakeFiles\My_Game.dir\src
 
-build CMakeFiles/SFML_Practice.dir/src/GameLogic.cpp.obj: CXX_COMPILER__SFML_Practice_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/GameLogic.cpp || cmake_object_order_depends_target_SFML_Practice
+build CMakeFiles/My_Game.dir/src/Window.cpp.obj: CXX_COMPILER__My_Game_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/Window.cpp || cmake_object_order_depends_target_My_Game
   DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles\SFML_Practice.dir\src\GameLogic.cpp.obj.d
+  DEP_FILE = CMakeFiles\My_Game.dir\src\Window.cpp.obj.d
   FLAGS = -g -std=gnu++14
   INCLUDES = -Ic:/SFML/include -isystem C:/SFML-2.5.1/include
-  OBJECT_DIR = CMakeFiles\SFML_Practice.dir
-  OBJECT_FILE_DIR = CMakeFiles\SFML_Practice.dir\src
+  OBJECT_DIR = CMakeFiles\My_Game.dir
+  OBJECT_FILE_DIR = CMakeFiles\My_Game.dir\src
 
-build CMakeFiles/SFML_Practice.dir/src/GameStates.cpp.obj: CXX_COMPILER__SFML_Practice_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/GameStates.cpp || cmake_object_order_depends_target_SFML_Practice
+build CMakeFiles/My_Game.dir/src/Fireball.cpp.obj: CXX_COMPILER__My_Game_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/Fireball.cpp || cmake_object_order_depends_target_My_Game
   DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles\SFML_Practice.dir\src\GameStates.cpp.obj.d
+  DEP_FILE = CMakeFiles\My_Game.dir\src\Fireball.cpp.obj.d
   FLAGS = -g -std=gnu++14
   INCLUDES = -Ic:/SFML/include -isystem C:/SFML-2.5.1/include
-  OBJECT_DIR = CMakeFiles\SFML_Practice.dir
-  OBJECT_FILE_DIR = CMakeFiles\SFML_Practice.dir\src
+  OBJECT_DIR = CMakeFiles\My_Game.dir
+  OBJECT_FILE_DIR = CMakeFiles\My_Game.dir\src
 
-build CMakeFiles/SFML_Practice.dir/src/Enemy.cpp.obj: CXX_COMPILER__SFML_Practice_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/Enemy.cpp || cmake_object_order_depends_target_SFML_Practice
+build CMakeFiles/My_Game.dir/src/MainMenu.cpp.obj: CXX_COMPILER__My_Game_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/MainMenu.cpp || cmake_object_order_depends_target_My_Game
   DEFINES = -DSFML_STATIC
-  DEP_FILE = CMakeFiles\SFML_Practice.dir\src\Enemy.cpp.obj.d
+  DEP_FILE = CMakeFiles\My_Game.dir\src\MainMenu.cpp.obj.d
   FLAGS = -g -std=gnu++14
   INCLUDES = -Ic:/SFML/include -isystem C:/SFML-2.5.1/include
-  OBJECT_DIR = CMakeFiles\SFML_Practice.dir
-  OBJECT_FILE_DIR = CMakeFiles\SFML_Practice.dir\src
+  OBJECT_DIR = CMakeFiles\My_Game.dir
+  OBJECT_FILE_DIR = CMakeFiles\My_Game.dir\src
+
+build CMakeFiles/My_Game.dir/src/Game.cpp.obj: CXX_COMPILER__My_Game_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/Game.cpp || cmake_object_order_depends_target_My_Game
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\My_Game.dir\src\Game.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -Ic:/SFML/include -isystem C:/SFML-2.5.1/include
+  OBJECT_DIR = CMakeFiles\My_Game.dir
+  OBJECT_FILE_DIR = CMakeFiles\My_Game.dir\src
+
+build CMakeFiles/My_Game.dir/src/GameOver.cpp.obj: CXX_COMPILER__My_Game_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/GameOver.cpp || cmake_object_order_depends_target_My_Game
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\My_Game.dir\src\GameOver.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -Ic:/SFML/include -isystem C:/SFML-2.5.1/include
+  OBJECT_DIR = CMakeFiles\My_Game.dir
+  OBJECT_FILE_DIR = CMakeFiles\My_Game.dir\src
+
+build CMakeFiles/My_Game.dir/src/Font.cpp.obj: CXX_COMPILER__My_Game_Debug C$:/Users/david/OneDrive$ -$ Florida$ Gulf$ Coast$ University/COP$ 3003/My$ Game/src/Font.cpp || cmake_object_order_depends_target_My_Game
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\My_Game.dir\src\Font.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -Ic:/SFML/include -isystem C:/SFML-2.5.1/include
+  OBJECT_DIR = CMakeFiles\My_Game.dir
+  OBJECT_FILE_DIR = CMakeFiles\My_Game.dir\src
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target SFML_Practice
+# Link build statements for EXECUTABLE target My_Game
 
 
 #############################################
-# Link the executable SFML_Practice.exe
+# Link the executable My_Game.exe
 
-build SFML_Practice.exe: CXX_EXECUTABLE_LINKER__SFML_Practice_Debug CMakeFiles/SFML_Practice.dir/src/main.cpp.obj CMakeFiles/SFML_Practice.dir/src/Window.cpp.obj CMakeFiles/SFML_Practice.dir/src/Player.cpp.obj CMakeFiles/SFML_Practice.dir/src/GameLogic.cpp.obj CMakeFiles/SFML_Practice.dir/src/GameStates.cpp.obj CMakeFiles/SFML_Practice.dir/src/Enemy.cpp.obj | C$:/SFML-2.5.1/lib/libsfml-system-s-d.a C$:/SFML-2.5.1/lib/libsfml-window-s-d.a C$:/SFML-2.5.1/lib/libsfml-graphics-s-d.a C$:/SFML-2.5.1/lib/libsfml-audio-s-d.a C$:/SFML-2.5.1/lib/libsfml-window-s-d.a C$:/SFML-2.5.1/lib/libfreetype.a C$:/SFML-2.5.1/lib/libsfml-system-s-d.a C$:/SFML-2.5.1/lib/libopenal32.a C$:/SFML-2.5.1/lib/libvorbisfile.a C$:/SFML-2.5.1/lib/libvorbisenc.a C$:/SFML-2.5.1/lib/libvorbis.a C$:/SFML-2.5.1/lib/libogg.a C$:/SFML-2.5.1/lib/libFLAC.a
+build My_Game.exe: CXX_EXECUTABLE_LINKER__My_Game_Debug CMakeFiles/My_Game.dir/src/main.cpp.obj CMakeFiles/My_Game.dir/src/StateManager.cpp.obj CMakeFiles/My_Game.dir/src/Mario.cpp.obj CMakeFiles/My_Game.dir/src/Window.cpp.obj CMakeFiles/My_Game.dir/src/Fireball.cpp.obj CMakeFiles/My_Game.dir/src/MainMenu.cpp.obj CMakeFiles/My_Game.dir/src/Game.cpp.obj CMakeFiles/My_Game.dir/src/GameOver.cpp.obj CMakeFiles/My_Game.dir/src/Font.cpp.obj | C$:/SFML-2.5.1/lib/libsfml-system-s-d.a C$:/SFML-2.5.1/lib/libsfml-window-s-d.a C$:/SFML-2.5.1/lib/libsfml-graphics-s-d.a C$:/SFML-2.5.1/lib/libsfml-audio-s-d.a C$:/SFML-2.5.1/lib/libsfml-window-s-d.a C$:/SFML-2.5.1/lib/libfreetype.a C$:/SFML-2.5.1/lib/libsfml-system-s-d.a C$:/SFML-2.5.1/lib/libopenal32.a C$:/SFML-2.5.1/lib/libvorbisfile.a C$:/SFML-2.5.1/lib/libvorbisenc.a C$:/SFML-2.5.1/lib/libvorbis.a C$:/SFML-2.5.1/lib/libogg.a C$:/SFML-2.5.1/lib/libFLAC.a
   FLAGS = -g
   LINK_LIBRARIES = C:/SFML-2.5.1/lib/libsfml-system-s-d.a  C:/SFML-2.5.1/lib/libsfml-window-s-d.a  C:/SFML-2.5.1/lib/libsfml-graphics-s-d.a  C:/SFML-2.5.1/lib/libsfml-audio-s-d.a  C:/SFML-2.5.1/lib/libsfml-window-s-d.a  -lgdi32  -lOpenGL32  C:/SFML-2.5.1/lib/libfreetype.a  C:/SFML-2.5.1/lib/libsfml-system-s-d.a  -lwinmm  C:/SFML-2.5.1/lib/libopenal32.a  C:/SFML-2.5.1/lib/libvorbisfile.a  C:/SFML-2.5.1/lib/libvorbisenc.a  C:/SFML-2.5.1/lib/libvorbis.a  C:/SFML-2.5.1/lib/libogg.a  C:/SFML-2.5.1/lib/libFLAC.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\SFML_Practice.dir
+  OBJECT_DIR = CMakeFiles\My_Game.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = SFML_Practice.exe
-  TARGET_IMPLIB = libSFML_Practice.dll.a
-  TARGET_PDB = SFML_Practice.exe.dbg
+  TARGET_FILE = My_Game.exe
+  TARGET_IMPLIB = libMy_Game.dll.a
+  TARGET_PDB = My_Game.exe.dbg
 
 
 #############################################
@@ -141,7 +165,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build SFML_Practice: phony SFML_Practice.exe
+build My_Game: phony My_Game.exe
 
 # =============================================================================
 # Folder targets.
@@ -151,7 +175,7 @@ build SFML_Practice: phony SFML_Practice.exe
 #############################################
 # Folder: C:/Users/david/OneDrive - Florida Gulf Coast University/COP 3003/My Game/cmake-build-debug
 
-build all: phony SFML_Practice.exe
+build all: phony My_Game.exe
 
 # =============================================================================
 # Built-in targets
