@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/david/OneDrive - Florida Gulf Coast University/COP 3003/My Game
+# Install script for directory: C:/Users/david/OneDrive - Florida Gulf Coast University/COP 2006/MARIO-FIREBALL-GAME
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/SFML_Practice")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/My_Game")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/david/OneDrive - Florida Gulf Coast University/COP 3003/My Game/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/david/OneDrive - Florida Gulf Coast University/COP 2006/MARIO-FIREBALL-GAME/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
