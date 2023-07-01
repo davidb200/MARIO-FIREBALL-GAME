@@ -10,4 +10,7 @@ loses health. The game has three states: A main menu, game, and game over screen
 If you would like to see how the game runs, watch the video below:
 
 
-[20230630_230601.zip](https://github.com/davidb200/MARIO-FIREBALL-GAME/files/11924205/20230630_230601.zip)
+
+
+https://github.com/davidb200/MARIO-FIREBALL-GAME/assets/101841853/820c6af2-25d5-4d94-af01-7916e68da00a
+
