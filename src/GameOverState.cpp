@@ -1,4 +1,4 @@
-#include "../headers/GameOver.h"
+#include "../headers/GameOverState.h"
 
 
 /*
@@ -6,7 +6,7 @@
  * @parm   : none
  * @return : void
  */
-void GameOver::loadFont()
+void GameOverState::loadFont()
 {
     if(!bobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\boba_milky\\Boba Milky.ttf"))
         std::cout << "Failed to load font!" << std::endl;
@@ -19,9 +19,9 @@ void GameOver::loadFont()
  *  @parm  : none
  *  @return: void
  */
-void GameOver::setTexts()
+void GameOverState::setTexts()
 {
-    // Game Over Text
+    // GameState Over Text
     gameOverText.setFont(bobaMilky);
     gameOverText.setFillColor(sf::Color::Black);
     gameOverText.setString("GAME OVER!");
@@ -57,10 +57,10 @@ void GameOver::setTexts()
  * @parm  : The address of the render window
  * @return: void
  */
-void GameOver:: drawTexts(sf::RenderWindow &window)
+void GameOverState:: drawTexts(sf::RenderWindow &window)
 {
     window.draw(gameOverText);
-    finalScore.setString(std::to_string(Game::getFinalScore()));
+    finalScore.setString(std::to_string(GameState::getFinalScore()));
 
     window.draw(finalScoreText);
     window.draw(finalScore);
@@ -70,18 +70,18 @@ void GameOver:: drawTexts(sf::RenderWindow &window)
 
 
 /*
- * Load the textures used in the game over screen from the "GameOverImages"
+ * Load the textures used in the game over screen from the "GameOverState_Images"
  * folder
  * @parm  : none
  * @return: void
  */
-void GameOver:: loadTextures()
+void GameOverState:: loadTextures()
 {
-    if(!yesButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\GameOverImages\\YesButton.png"))
+    if(!yesButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\GameOverState_Images\\YesButton.png"))
         std::cout << "Failed to load yes button" << std::endl;
-    if(!noButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\GameOverImages\\noButton.png"))
+    if(!noButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\GameOverState_Images\\noButton.png"))
         std::cout << "Failed to load no button" << std::endl;
-    if(!gameOver.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\GameOverImages\\GameOverImage.png"))
+    if(!gameOver.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\GameOverState_Images\\GameOverImage.png"))
         std::cout << "Failed to load game over image" << std::endl;
 
 } // End of loadTextures
@@ -93,7 +93,7 @@ void GameOver:: loadTextures()
  * @parm  : none
  * @return: void
  */
-void GameOver:: setSprites()
+void GameOverState:: setSprites()
 {
     yesButtonSprite.setTexture(yesButton);
     yesButtonSprite.setPosition(125.f, 400.f);
@@ -115,7 +115,7 @@ void GameOver:: setSprites()
  * @parm  : none
  * @return: void
  */
-void GameOver:: drawSprites(sf::RenderWindow &window)
+void GameOverState:: drawSprites(sf::RenderWindow &window)
 {
     window.draw(gameOverSprite);
     window.draw(yesButtonSprite);
@@ -132,7 +132,7 @@ void GameOver:: drawSprites(sf::RenderWindow &window)
  * @parm  : The address of the render window
  * @return: boolean
  */
-bool GameOver:: theYesButtonIsPressed(sf::RenderWindow &window)
+bool GameOverState:: theYesButtonIsPressed(sf::RenderWindow &window)
 {
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) // If the mouse is pressed
     {
@@ -156,7 +156,7 @@ bool GameOver:: theYesButtonIsPressed(sf::RenderWindow &window)
  * @parm  : The address of the render window
  * @return: boolean
  */
-bool GameOver:: theNoButtonIsPressed(sf::RenderWindow &window)
+bool GameOverState:: theNoButtonIsPressed(sf::RenderWindow &window)
 {
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) // If the mouse is pressed
     {

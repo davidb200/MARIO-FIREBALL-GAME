@@ -1,4 +1,4 @@
-#include "../headers/MainMenu.h"
+#include "../headers/MainMenuState.h"
 
 
 /*
@@ -6,7 +6,7 @@
  * @parm   : none
  * @return : void
  */
-void MainMenu::loadFont()
+void MainMenuState::loadFont()
 {
     if(!bobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\boba_milky\\Boba Milky.ttf"))
        std::cout << "Failed to load font!" << std::endl;
@@ -15,19 +15,19 @@ void MainMenu::loadFont()
 
 
 /*
- * Loads the textures used that are used in the main menu from the "MainMenuImages" folder
+ * Loads the textures used that are used in the main menu from the "MainMenuState_Images" folder
  *  @parm  : none
  *  @return: void
  */
-void MainMenu::loadTextures()
+void MainMenuState::loadTextures()
 {
-    if(!marioImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuImages\\Mario.png"))
+    if(!marioImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuState_Images\\Mario.png"))
         std::cout << "Failed to load main menu mario image" << std::endl;
-    if(!startButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuImages\\StartButton.png"))
+    if(!startButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuState_Images\\StartButton.png"))
         std::cout << "Failed to load start button image" << std::endl;
-    if(!background.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuImages\\MainMenuBackground.png"))
+    if(!background.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuState_Images\\MainMenuBackground.png"))
         std::cout << "Failed to load background image" << std::endl;
-    if(!exitButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuImages\\ExitButton.png"))
+    if(!exitButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuState_Images\\ExitButton.png"))
         std::cout << "Failed to load exit button" << std::endl;
 
 } // End of loadTextures
@@ -38,7 +38,7 @@ void MainMenu::loadTextures()
  * @parm  : none
  * @return: void
  */
-void MainMenu:: setTexts()
+void MainMenuState:: setTexts()
 {
     videoGameText.setFont(bobaMilky);
     videoGameText.setPosition(155.f, 150.f);
@@ -55,7 +55,7 @@ void MainMenu:: setTexts()
  * @parm  : none
  * @return: void
  */
-void MainMenu::setSprites()
+void MainMenuState::setSprites()
 {
     // Mario main menu sprite
     marioImageSprite.setTexture(marioImage);
@@ -92,7 +92,7 @@ void MainMenu::setSprites()
  * @parm  : The address of the render window
  * @return: void
  */
-void MainMenu::drawSprites(sf::RenderWindow &window)
+void MainMenuState::drawSprites(sf::RenderWindow &window)
 {
     window.draw(backgroundSprite);
     window.draw(marioImageSprite);
@@ -107,7 +107,7 @@ void MainMenu::drawSprites(sf::RenderWindow &window)
  * @parm  : The address of the render window
  * @return: void
  */
-void MainMenu::drawTexts(sf::RenderWindow &window)
+void MainMenuState::drawTexts(sf::RenderWindow &window)
 {
     window.draw(videoGameText);
 
@@ -122,7 +122,7 @@ void MainMenu::drawTexts(sf::RenderWindow &window)
  * @parm  : The address of the render window
  * @return: Boolean
  */
-bool MainMenu::startButtonIsPressed(sf::RenderWindow &window)
+bool MainMenuState::startButtonIsPressed(sf::RenderWindow &window)
 {
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) // If the mouse is pressed
     {
@@ -144,7 +144,7 @@ bool MainMenu::startButtonIsPressed(sf::RenderWindow &window)
  * @parm  : The address of the render window
  * @return: Boolean
  */
-bool MainMenu::exitButtonIsPressed(sf::RenderWindow &window)
+bool MainMenuState::exitButtonIsPressed(sf::RenderWindow &window)
 {
     if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) // If the mouse is pressed
     {

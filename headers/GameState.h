@@ -1,5 +1,5 @@
-#ifndef MAIN_CPP_GAME_H
-#define MAIN_CPP_GAME_H
+#ifndef MAIN_CPP_GAMESTATE_H
+#define MAIN_CPP_GAMESTATE_H
 
 // Builtin library
 #include <SFML/Graphics.hpp>
@@ -11,7 +11,7 @@
 #include "Fireball.h"
 
 
-class Game{
+class GameState{
 
 private:
 
@@ -72,7 +72,7 @@ public:
     void updatePlayerScore();
     void updatePlayerHealth();
 
-    // Game logic
+    // GameState logic
     void runLogic();
 
     // State transitions
@@ -84,4 +84,4 @@ public:
 };
 
 
-#endif //MAIN_CPP_GAME_H
+#endif //MAIN_CPP_GAMESTATE_H

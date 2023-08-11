@@ -1,5 +1,5 @@
-#ifndef MAIN_CPP_MAINMENU_H
-#define MAIN_CPP_MAINMENU_H
+#ifndef MAIN_CPP_MAINMENUSTATE_H
+#define MAIN_CPP_MAINMENUSTATE_H
 
 // Builtin library
 #include <SFML/graphics.hpp>
@@ -10,7 +10,7 @@
                             (the window constants are needed) */
 
 
-class MainMenu{
+class MainMenuState{
 
 private:
 
@@ -57,4 +57,4 @@ public:
 };
 
 
-#endif //MAIN_CPP_MAINMENU_H
+#endif //MAIN_CPP_MAINMENUSTATE_H

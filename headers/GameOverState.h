@@ -1,5 +1,5 @@
-#ifndef MAIN_CPP_GAMEOVER_H
-#define MAIN_CPP_GAMEOVER_H
+#ifndef MAIN_CPP_GAMEOVERSTATE_H
+#define MAIN_CPP_GAMEOVERSTATE_H
 
 // Builtin libraries
 #include <SFML/Graphics.hpp>
@@ -7,10 +7,10 @@
 
 // Custom header files
 #include "Definitions.h" // Needed for size of text
-#include "Game.h" // Needed for the final score of the player
+#include "GameState.h" // Needed for the final score of the player
 
 
-class GameOver{
+class GameOverState{
 
 private:
 
@@ -58,4 +58,4 @@ public:
 };
 
 
-#endif //MAIN_CPP_GAMEOVER_H
+#endif //MAIN_CPP_GAMEOVERSTATE_H

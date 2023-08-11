@@ -6,9 +6,9 @@
 
 // Custom header files
 // Used to help set up and run the states of the game)
-#include "MainMenu.h"
-#include "Game.h"
-#include "GameOver.h"
+#include "MainMenuState.h"
+#include "GameState.h"
+#include "GameOverState.h"
 
 
 class StateManager{
@@ -16,9 +16,9 @@ class StateManager{
 private:
 
     // Objects
-    MainMenu mainMenu;
-    Game game;
-    GameOver gameOver;
+    MainMenuState mainMenu;
+    GameState game;
+    GameOverState gameOver;
 
     // States to keep track of (enumerated for readability)
     enum States{

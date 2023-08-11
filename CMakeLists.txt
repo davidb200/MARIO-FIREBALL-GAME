@@ -3,7 +3,7 @@ project(My_Game)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(My_Game src/main.cpp src/StateManager.cpp headers/StateManager.h src/Mario.cpp headers/Mario.h src/Window.cpp headers/Window.h src/Fireball.cpp headers/Fireball.h headers/Definitions.h src/MainMenu.cpp headers/MainMenu.h src/Game.cpp headers/Game.h src/GameOver.cpp headers/GameOver.h)
+add_executable(My_Game src/main.cpp src/StateManager.cpp headers/StateManager.h src/Mario.cpp headers/Mario.h src/Window.cpp headers/Window.h src/Fireball.cpp headers/Fireball.h headers/Definitions.h src/MainMenuState.cpp headers/MainMenuState.h src/GameState.cpp headers/GameState.h src/GameOverState.cpp headers/GameOverState.h)
 
 set(SFML_STATIC_LIBRARIES TRUE)
 set(SFML_DIR C:/SFML-2.5.1/lib/cmake/SFML)
