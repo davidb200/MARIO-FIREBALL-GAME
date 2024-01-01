@@ -8,13 +8,13 @@
 
 
 /*
- * Loads the font from the "boba_milky" folder
+ * Loads the font from the "font" folder
  * @parm   : none
  * @return : void
  */
 void MainMenuState::loadFont()
 {
-    if(!bobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\boba_milky\\Boba Milky.ttf"))
+    if(!bobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\font\\Boba Milky.ttf"))
        std::cout << "Failed to load font!" << std::endl;
 
 } // End of loadFont
