@@ -1,3 +1,9 @@
+////////////////////////////////////////////////////////////////////
+// Title      : Fireball.cpp
+// Author     : David Betanzos
+// Description: Implements all methods and constructor declared in
+//              Fireball.h.
+////////////////////////////////////////////////////////////////////
 #include "../headers/Fireball.h"
 
 
@@ -5,8 +11,11 @@
  * Default constructor for initializing the spawn and acceleration of the enemy when it falls
  * @parm : none
  */
-Fireball::Fireball(): x(float(rand() % WINDOW_WIDTH)) , y(0.f), gravity(GRAVITY_CONSTANT)
+Fireball::Fireball()
 {
+    setXPos(float(rand() % WINDOW_WIDTH));
+    setYPos(0.f);
+    yVelocity = GRAVITY_CONSTANT;
 
 }
 
@@ -16,11 +25,11 @@ Fireball::Fireball(): x(float(rand() % WINDOW_WIDTH)) , y(0.f), gravity(GRAVITY_
  * @parm   : none
  * @return : float
  */
-float Fireball:: getXPosition()
+float Fireball::getXPos()
 {
-    return x;
+    return xPos;
 
-} // End of getXPosition
+} // End of getXPos
 
 
 /*
@@ -28,11 +37,33 @@ float Fireball:: getXPosition()
  * @parm   : none
  * @return : float
  */
-float Fireball :: getYPosition()
+float Fireball::getYPos()
 {
-    return y;
+    return yPos;
 
-} // End of getYPosition
+} // End of getYPos
+
+
+/*
+ * Sets the X position for the fireball
+ * @parm: float with the x position we are setting it to
+ * @return: none
+ */
+void Fireball::setXPos(float x)
+{
+    xPos = x;
+} // End of setXPos
+
+/*
+ * Sets the Y position for the fireball
+ * @parm  : float with the y position we are setting it to
+ * @return: none
+ */
+void Fireball::setYPos(float y)
+{
+    yPos = y;
+
+} // End of setYPos
 
 
 /*
@@ -40,9 +71,9 @@ float Fireball :: getYPosition()
  * @parm   : none
  * @return : boolean
  */
-bool Fireball:: isOutOfWindow()
+bool Fireball::isOutOfWindow()
 {
-    if(y > WINDOW_HEIGHT)
+    if(yPos > WINDOW_HEIGHT)
         return true;
 
     return false;
@@ -58,29 +89,27 @@ void  Fireball::moveCorrectly()
 {
     if(isOutOfWindow()) // If the enemy is out of bounds
     {
-        spawnInRandomPosition(); // Place it in a new position (With height being the same_)
+        spawnInRandomPosition(); // Place it in a new position (With height being the same)
         return; // exit
     }
 
     // If the enemy is not out of the window, then only update the Y position (The X
     // position will only update when the enemy has to spawn in again
-    velocityY = gravity;
-    y += velocityY;
+    yPos += yVelocity;
 
 } // End of moveCorrectly
 
 
 /*
- * Spawns an enemy in a new random position, but just along the x-axis,
- * y-axis stays the same
+ * Spawns an enemy in a new random position, but just along the xPos-axis,
+ * yPos-axis stays the same
  * @parm  : none
  * @return: void
  */
-void Fireball:: spawnInRandomPosition()
+void Fireball::spawnInRandomPosition()
 {
-    x = float(rand() % WINDOW_WIDTH);
-    y = 0.f; // Keep the same height the enemy initially dropped
-    // from because the height will not change
+    setXPos(float(rand() % WINDOW_WIDTH)); // The xPos will change
+    setYPos(0.f); // The height will not change
 
 } // End of SpawnInRandomPosition;
 
@@ -90,11 +119,9 @@ void Fireball:: spawnInRandomPosition()
  * @parm  : The sprite of the mario and the sprite of the enemy
  * @return: boolean
  */
-bool Fireball:: collidesWithPlayer(sf::Sprite &player, sf::Sprite &enemy)
+bool Fireball::collidesWithPlayer(sf::Sprite &player, sf::Sprite &enemy)
 {
     // Check if the sprites intersect
-    bool collides = player.getGlobalBounds().intersects(enemy.getGlobalBounds());
-
-    return collides;
+    return player.getGlobalBounds().intersects(enemy.getGlobalBounds());
 
 } // End of collidesWithPlayer

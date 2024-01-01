@@ -1,20 +1,31 @@
+////////////////////////////////////////////////////////////////////
+// Title      : Mario.cpp
+// Author     : David Betanzos
+// Description: Implements all methods and constructor declared in
+//              Mario.h.
+////////////////////////////////////////////////////////////////////
 #include "../headers/Mario.h"
 
 
 /*
- *  Initializes the x position, y position, velocity, score, and health
- *  of the mario when the game begins
+ *  Initializes the xPos position, yPos position, velocity, score, and health
+ *  of the mario when the gameState begins
  *  @parm  : none
  *  @return: void
  */
-Mario :: Mario(): x(rand() % WINDOW_WIDTH), y(405.f), velocityX(0.f), score(0), health(100)
+Mario :: Mario()
 {
+    setXPos(rand() % WINDOW_WIDTH);
+    setYPos(405.f);
+    setScore(0);
+    setHealth(100);
+    velocityX = 0.f;
 
 }
 
 
 /*
- *  Gets the mario's current score in the game
+ *  Gets the mario's current score in the gameState
  *  @parm  : none
  *  @return: The score of the mario
  */
@@ -26,11 +37,11 @@ int   Mario:: getScore()
 
 
 /*
- *  Gets the mario's current health in the game
+ *  Gets the mario's current health in the gameState
  *  @parm  : none
  *  @return: The health of the mario
  */
-int   Mario:: getHealth()
+int Mario::getHealth()
 {
     return health;
 
@@ -38,27 +49,72 @@ int   Mario:: getHealth()
 
 
 /*
- *  Gets the mario's current x position in the game
+ *  Gets the mario's current xPos position in the gameState
  *  @parm  : none
- *  @return: The x position of mario
+ *  @return: The xPos position of mario
  */
-float Mario:: getXPosition()
+float Mario::getXPos()
 {
-    return x;
+    return xPos;
 
-} // End of getXPosition
+} // End of getXPos
 
 
 /*
- *  Gets the mario's current y position in the game
+ *  Gets the mario's current yPos position in the gameState
  *  @parm: none
- *  @return: The y position of mario
+ *  @return: The yPos position of mario
  */
-float Mario:: getYPosition()
+float Mario::getYPos()
 {
-    return y;
+    return yPos;
 
-} // End of getYPosition
+} // End of getYPos
+
+
+/*
+ * Sets the health of mario
+ * @parm  : an integer holding the current health of mario
+ * @return: none
+ */
+void Mario::setHealth(int _health)
+{
+    health = _health;
+
+} // End of setHealth
+
+/*
+ * Sets the score for mario
+ * @parm  : an integer holding the current score of amrio
+ * @return: none
+ */
+void Mario::setScore(int _score)
+{
+    score = _score;
+} // End of setScore
+
+
+/*
+ * Sets mario's x position
+ * @parm  : float holding the current x position of mario
+ * @return: void
+ */
+void Mario::setXPos(float x)
+{
+    xPos = x;
+} // End of setXPos
+
+
+/*
+ * Sets mario's y position
+ * @parm: float holding the current x position of mario
+ * @return: void
+ */
+void Mario::setYPos(float y)
+{
+    yPos = y;
+
+} // End of setYPos
 
 
 /*
@@ -69,7 +125,7 @@ float Mario:: getYPosition()
  */
 void  Mario::resetHealth()
 {
-    health = 100;
+    setHealth(100);
 
 } // End of resetHealth
 
@@ -80,23 +136,23 @@ void  Mario::resetHealth()
  *  @parm  : none
  *  @return: none
  */
-void Mario:: resetScore()
+void Mario::resetScore()
 {
-    score = 0;
+    setScore(0);
 
 } // End of resetScore
 
 
 /*
- *  Respawn's Mario (x and y), for when the player wants
+ *  Respawn's Mario (xPos and yPos), for when the player wants
  *  to play again
  *  @parm  : none
  *  @return: none
  */
 void Mario::respawn()
 {
-    x = rand() % WINDOW_WIDTH;
-    y = 405.f; // y will not change because the player is connected to the ground
+    setXPos(float(rand() % WINDOW_WIDTH));
+    setYPos(405.f);
 
 } // End of resetXPosition
 
@@ -106,9 +162,9 @@ void Mario::respawn()
  *  @parm  : none
  *  @return: void
  */
-void  Mario:: addToScore()
+void  Mario::addToScore()
 {
-    score += 50;
+    setScore(score + 50);
 
 } // End of addToScore
 
@@ -118,9 +174,9 @@ void  Mario:: addToScore()
  *  @parm  : none
  *  @return: void
  */
-void  Mario:: lowerHealth()
+void  Mario::lowerHealth()
 {
-    health = health - 25;
+    setHealth(health - 25);
 
 } // End of lowerHealth
 
@@ -130,9 +186,9 @@ void  Mario:: lowerHealth()
  *  @parm  : none
  *  @return: boolean
  */
-bool  Mario:: isOutOfBoundsLeft()
+bool  Mario::isOutOfBoundsLeft()
 {
-    if (x <= LEFT_BOUND) // If the mario tries to go out of bounds on the left side
+    if (xPos <= LEFT_BOUND) // If the mario tries to go out of bounds on the left side
         return true;
 
     return false;
@@ -145,9 +201,9 @@ bool  Mario:: isOutOfBoundsLeft()
  *  @parm  : none
  *  @return: boolean
  */
-bool Mario:: isOutOfBoundsRight()
+bool Mario::isOutOfBoundsRight()
 {
-    if(x >= RIGHT_BOUND) // If the mario is trying to go out fo bounds on the right side
+    if(xPos >= RIGHT_BOUND) // If the mario is trying to go out fo bounds on the right side
         return true;
 
     return false;
@@ -160,16 +216,16 @@ bool Mario:: isOutOfBoundsRight()
  *  @parm  : none
  *  @return: void
  */
-void Mario:: keepPlayerInBounds()
+void Mario::keepPlayerInBounds()
 {
     if(isOutOfBoundsLeft())
     {
-        x = LEFT_BOUND;
+        xPos = LEFT_BOUND;
         return;
     }
 
     if(isOutOfBoundsRight())
-        x = RIGHT_BOUND;
+        xPos = RIGHT_BOUND;
 
 } // End of keepPlayerInBounds
 
@@ -179,7 +235,7 @@ void Mario:: keepPlayerInBounds()
  *  @parm  : none
  *  @return: void
  */
-void Mario:: moveLeft()
+void Mario::moveLeft()
 {
     velocityX = -10.f;
 
@@ -191,7 +247,7 @@ void Mario:: moveLeft()
  *  @parm  : none
  *  @return: void
  */
-void Mario:: moveRight()
+void Mario::moveRight()
 {
     velocityX = 10.f;
 
@@ -203,7 +259,7 @@ void Mario:: moveRight()
  *  @parm  : none
  *  @return: void
  */
-void Mario:: stayStill()
+void Mario::stayStill()
 {
     velocityX = 0.f;
 
@@ -217,7 +273,7 @@ void Mario:: stayStill()
  */
 void Mario::updateMovement()
 {
-    x += velocityX;
+    xPos += velocityX;
 
 } // End of updateMovement
 
@@ -230,7 +286,7 @@ void Mario::updateMovement()
  *  @parm  : mario sprite
  *  @return: void
  */
-void Mario:: processInput(sf::Sprite &mario)
+void Mario::processInput(sf::Sprite &mario)
 {
     // Key pressings
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) // Left direction

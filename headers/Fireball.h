@@ -1,3 +1,14 @@
+////////////////////////////////////////////////////////////////////////
+// Title      : Fireball.h
+// Author     : David Betanzos
+// Description: Outlines the necessary attributes and methods needed for
+//              an object of Fireball.
+// Attributes : x position, y position, y velocity
+// Methods    : getXPos, getYPos, setXPosition, setYPosition,
+//              isOutofWindow, moveCorrectly, spawnInRandomPosition,
+//              collidesWithPlayer
+/////////////////////////////////////////////////////////////////////////
+
 #ifndef MAIN_CPP_FIREBALL_H
 #define MAIN_CPP_FIREBALL_H
 
@@ -13,12 +24,11 @@ class Fireball {
 private:
 
     // Position
-    float x;
-    float y;
+    float xPos;
+    float yPos;
 
-    // Velocity and acceleration
-    float velocityY;
-    float gravity;
+    // acceleration
+    float yVelocity;
 
 public:
 
@@ -33,8 +43,12 @@ public:
     //---------------------------------------------------------------
 
     // Getters
-    float getXPosition();
-    float getYPosition();
+    float getXPos();
+    float getYPos();
+
+    // Setters
+    void setXPos(float x);
+    void setYPos(float y);
 
     // Position checking
     bool isOutOfWindow();

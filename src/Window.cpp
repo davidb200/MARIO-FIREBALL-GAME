@@ -1,9 +1,15 @@
+////////////////////////////////////////////////////////////////////
+// Title      : Window.cpp
+// Author     : David Betanzos
+// Description: Implements all methods declared in
+//              Window.h.
+////////////////////////////////////////////////////////////////////
 #include "../headers/Window.h"
 
 
 /*
  * Creates the window, sets the FPS of the window, and initializes all the states to be used
- * .Then while the window is open will run, the current state of the game on the window.
+ * .Then while the window is open will run, the current manager of the gameState on the window.
  * @parm  : none
  * @return: void
  */
@@ -14,9 +20,9 @@ void Window::runMarioFireballGame()
     window.setFramerateLimit(FPS);
 
     // Setting up all the states so that they are ready to go
-    initMainMenu();
-    initGame();
-    initGameOver();
+    manager.initMainMenu();
+    manager.initGame();
+    manager.initGameOver();
 
     while (window.isOpen())  // run the program as long as the window is open
     {
@@ -30,7 +36,7 @@ void Window::runMarioFireballGame()
                 window.close();
         }
 
-        runCurrentState(window);
+        manager.runCurrentState(window);
     }
 
 } // End of runMarioFireballGame

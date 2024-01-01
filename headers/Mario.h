@@ -1,3 +1,15 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+//  Title      : Mario.h
+//  Author     : David Betanzos
+//  Description: Outlines all the attributes and methods needed for
+//               an object of Mario.
+//  Attributes : x position, y position, x velocity, health
+//  Methods    : getScore, getHealth, getXPos, getYPos, setHealth, setScore,
+//               setXPos, setYPos, resetHealth, resetScore, respawn, addToScore, lowerHealth,
+//               isOutOfBoundsLeft, isOutOfBoundsRight, keepPlayerInBounds, moveLeft, moveRight,
+//               stayStill, updateMovement, processInput
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 #ifndef MAIN_CPP_MARIO_H
 #define MAIN_CPP_MARIO_H
 
@@ -7,7 +19,6 @@
 // Custom header file
 #include "Definitions.h" // Constants that check out of bounds for the window
 
-
 class Mario{
 
 private:
@@ -16,8 +27,8 @@ private:
     int score;
 
     // Positioning
-    float x;
-    float y;
+    float xPos;
+    float yPos;
     float velocityX;
 
     // Health
@@ -38,10 +49,16 @@ public:
     // Getters
     int getScore();
     int getHealth();
-    float getXPosition();
-    float getYPosition();
+    float getXPos();
+    float getYPos();
 
     // Setters
+    void setHealth(int _health);
+    void setScore(int _score);
+    void setXPos(float x);
+    void setYPos(float y);
+
+    // Reset
     void resetHealth();
     void resetScore();
     void respawn();

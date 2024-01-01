@@ -1,3 +1,19 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+//  Title      : GameState.h
+//  Author     : David Betanzos
+//  Description: Outlines all the attributes and methods needed for
+//               an object of game state of our game.
+//  Attributes : Fonts      -> boba milky
+//               Texts      -> health, "health" text, "Game Over" text, "Score" text,
+//               Textures   -> Mario frames image, fireball image, ground image, background image,
+//               Sprites    -> Mario sprite, fireball sprite, ground sprite, background sprite
+//               Additional -> final score of the player
+//  Methods    : loadFont, loadTextures, initTexts, initSprites, initMarioandFireballPositions,
+//               initFinalScore, getFinalScore, drawTexts, drawSprites, updatePlayerScore,
+//               updatePlayerHealth, runLogic, isOver, reset
+//  Aggregation: GameState has a Mario and a fireball
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 #ifndef MAIN_CPP_GAMESTATE_H
 #define MAIN_CPP_GAMESTATE_H
 
@@ -6,7 +22,7 @@
 #include <iostream>
 
 // Custom header files
-// Aspects needed for the game (Mario and the fireball)
+// Aspects needed for the gameState (Mario and the fireball)
 #include "Mario.h"
 #include "Fireball.h"
 
@@ -38,7 +54,7 @@ private:
     sf::Sprite backgroundSprite;
 
     /* Objects (Their Constructors will be called as soon as an instance of
-     game is created) */
+     gameState is created) */
     Mario mario;
     Fireball enemy;
 
@@ -55,13 +71,13 @@ public:
     void loadFont();
     void loadTextures();
 
-    // Setters
-    void setTexts();
-    void setSprites();
-    void setMarioAndFireballPositions();
-    void setFinalScore();
+    // Inits
+    void initTexts();
+    void initSprites();
+    void initMarioAndFireballPositions();
+    void initFinalScore();
 
-    // Getters
+    // Final Score
     static int getFinalScore();
 
     // Drawing
@@ -72,7 +88,7 @@ public:
     void updatePlayerScore();
     void updatePlayerHealth();
 
-    // GameState logic
+    // Game logic
     void runLogic();
 
     // State transitions

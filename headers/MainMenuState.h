@@ -1,3 +1,17 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+//  Title      : MainMenuState.h
+//  Author     : David Betanzos
+//  Description: Outlines all the attributes and methods needed for
+//               an object of main menu state of our game.
+//  Attributes : Fonts      -> boba milky
+//               Texts      -> video game text
+//               Textures   -> Mario image, start button, background, exit button
+//               Sprites    -> Mario image sprite, start button sprite, exit button sprite,
+//                             background sprite
+//  Methods    : loadFont, loadTextures, initTexts, initSprites, drawSprites, drawTexts,
+//               startButtonIsPressed, exitButtonIsPressed
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 #ifndef MAIN_CPP_MAINMENUSTATE_H
 #define MAIN_CPP_MAINMENUSTATE_H
 
@@ -42,15 +56,15 @@ public:
     void loadFont();
     void loadTextures();
 
-    // Setters
-    void setTexts();
-    void setSprites();
+    // Inits
+    void initTexts();
+    void initSprites();
 
     // Drawing
     void drawSprites(sf::RenderWindow &window);
     void drawTexts(sf::RenderWindow &window);
 
-    // Next state transitions
+    // Next manager transitions
     bool startButtonIsPressed(sf::RenderWindow &window);
     bool exitButtonIsPressed(sf::RenderWindow &window);
 

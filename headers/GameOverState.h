@@ -1,3 +1,16 @@
+////////////////////////////////////////////////////////////////////////////////////
+// Title      : GameOverState.h
+// Author     : David Betanzos
+// Description: Outlines all the attributes and methods needed
+//              for an object of GameOverState of our game.
+// Attributes : Fonts    -> bobaMilky font,
+//              Texts    -> "GameOver", "Final Score,finalScore of Mario
+//              Textures -> yes button, no button, game over button
+//              Sprites  -> yes button sprite, no button sprite, game over sprite
+// Methods    : loadTextures, loadFonts, initTexts, initSprites,drawSprites,
+//              drawTexts, theNoButtonIsPressed, theYesButtonIsPressed
+////////////////////////////////////////////////////////////////////////////////////
+
 #ifndef MAIN_CPP_GAMEOVERSTATE_H
 #define MAIN_CPP_GAMEOVERSTATE_H
 
@@ -43,9 +56,9 @@ public:
     void loadTextures();
     void loadFont();
 
-    // Setters
-    void setTexts();
-    void setSprites();
+    // Inits
+    void initTexts();
+    void initSprites();
 
     // Drawing
     void drawSprites(sf::RenderWindow &window);

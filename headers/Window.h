@@ -1,3 +1,11 @@
+/////////////////////////////////////////////////////////////////
+// Title      : Window.h
+// Author     : David Betanzos
+// Description: Outlines all the attributes and methods needed for
+//              an object of Window.
+// Attributes : Objects (state manager)
+// Methods    : runMarioFireballGame
+//////////////////////////////////////////////////////////////////
 #ifndef MAIN_CPP_WINDOW_H
 #define MAIN_CPP_WINDOW_H
 
@@ -5,16 +13,15 @@
 #include <SFML/graphics.hpp>
 
 // Custom header files
-#include "StateManager.h" // Needed for running the current state of the gam
+#include "StateManager.h" // Needed for running the current manager of the gam
 #include "Definitions.h" // Needed to set up the window width, height, and FPS
 
-/* The Window class needs to inherit from the State Manager class
- * because the window needs to know the current state of the game in order render
- * the current state of the game
- */
 
-
-class Window: public StateManager{
+class Window{
+private:
+    // Object of type StateManager to display the correct state on the window
+    // (aggregation)
+    StateManager manager;
 
 public:
 

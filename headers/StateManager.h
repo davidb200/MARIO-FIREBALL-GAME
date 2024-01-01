@@ -1,3 +1,15 @@
+//////////////////////////////////////////////////////////////////////////////
+//  Title       : StateManager.h
+//  Author      : David Betanzos
+//  Description : Outlines all the attributes and methods needed
+//                for an object of State manager (manages states for Mario
+//                Fireball Game).
+//  Attributes  : Objects (MainMenu State, Game State, GameOverState)
+//                Enum for States numbering, a current game state based off
+//                the numbering
+//  Methods     : initMainMenu, initGame, initGameOver, runMainMenu, runGame,
+//                runGameOver, runCurrentGameState
+//////////////////////////////////////////////////////////////////////////////
 #ifndef MAIN_CPP_STATEMANAGER_H
 #define MAIN_CPP_STATEMANAGER_H
 
@@ -5,7 +17,7 @@
 #include <SFML/graphics.hpp>
 
 // Custom header files
-// Used to help set up and run the states of the game)
+// Used to help set up and run the states of the gameState)
 #include "MainMenuState.h"
 #include "GameState.h"
 #include "GameOverState.h"
@@ -15,10 +27,10 @@ class StateManager{
 
 private:
 
-    // Objects
-    MainMenuState mainMenu;
-    GameState game;
-    GameOverState gameOver;
+    // Objects (Aggregation)
+    MainMenuState mainMenuState;
+    GameState gameState;
+    GameOverState gameOverState;
 
     // States to keep track of (enumerated for readability)
     enum States{
@@ -28,7 +40,7 @@ private:
         CLOSE_GAME = 3
     };
 
-    // Current state in the game
+    // Current manager in the gameState
     States currentGameState;
 
 public:

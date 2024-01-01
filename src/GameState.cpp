@@ -1,3 +1,9 @@
+////////////////////////////////////////////////////////////////////
+// Title      : GameState.cpp
+// Author     : David Betanzos
+// Description: Implements all methods declared in
+//              GameState.h.
+////////////////////////////////////////////////////////////////////
 #include "../headers/GameState.h"
 
 
@@ -6,46 +12,46 @@
  *  @parm  : none
  * @return : void
  */
-void GameState:: loadFont()
+void GameState::loadFont()
 {
-    if(!bobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\boba_milky\\Boba Milky.ttf"))
+    if(!bobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\boba_milky\\Boba Milky.ttf"))
         std::cout << "Failed to load font!" << std::endl;
 
 } // End of loadFont
 
 
 /*
- *  Loads all the game Textures used which are located under the "GameState_Images" folder
+ *  Loads all the gameState Textures used which are located under the "GameState_Images" folder
  *  @parm  : none
  *  @return: void
  */
-void GameState:: loadTextures() {
+void GameState::loadTextures() {
 
     // Mario Image
-    if(!marioFramesImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\GameState_Images\\MarioFrames.png"))
+    if(!marioFramesImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\Images\\GameState_Images\\MarioFrames.png"))
         std::cout << "Failed to load mario!" << std:: endl;
 
     // Fireball Image
-    if(!fireballImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\GameState_Images\\Fireball.png"))
+    if(!fireballImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\Images\\GameState_Images\\Fireball.png"))
         std::cout << "Failed to load fireballImage!" << std:: endl;
 
     // Ground Image
-    if(!groundImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\GameState_Images\\ground.png"))
+    if(!groundImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\Images\\GameState_Images\\ground.png"))
         std::cout << "Failed to load groundImage!" << std::endl;
 
     // Background Image
-    if(!backgroundImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\GameState_Images\\Background.jpg"))
+    if(!backgroundImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\Images\\GameState_Images\\Background.jpg"))
         std::cout << "Failed to load background!" << std::endl;
 
 } // End of loadTextures
 
 
 /*
- * Sets the texts used in the game
+ * Initializes the texts used in the gameState
  * @parm  : none
  * @return: void
  */
-void GameState:: setTexts()
+void GameState::initTexts()
 {
     // Health text ("Just the word HEALTH on the screen")
     healthText.setFont(bobaMilky);
@@ -73,11 +79,11 @@ void GameState:: setTexts()
     score.setCharacterSize(TEXT_SIZE);
     score.setFillColor(sf::Color::White);
 
-} // End of setTexts
+} // End of initTexts
 
 
 /*
- * Draws the texts used for the game on the screen
+ * Draws the texts used for the gameState on the screen
  * @parm  : the address of the render window
  * @return: void
  */
@@ -92,12 +98,12 @@ void GameState:: drawTexts(sf::RenderWindow &window)
 
 
 /*
- *  Sets all the sprites to be formatted nicely on the
- *  window for when the game starts
+ *  Initializes all the sprites to be formatted nicely on the
+ *  window for when the gameState starts
  *  @parm  : none
  *  @return: void
  */
-void GameState:: setSprites()
+void GameState::initSprites()
 {
     // Mario
     marioSprite.setTexture(marioFramesImage);
@@ -125,21 +131,21 @@ void GameState:: setSprites()
 
     backgroundSprite.setScale(scaleX, scaleY);
 
-} // End of setSprites
+} // End of initSprites
 
 
 /*
- *  Sets the current mario (the mario) and the fireball (the enemy) sprite position
+ *  Initializes the current mario (the mario) and the fireball (the enemy) sprite position
  *  on the window
  *  @parm  : none
  *  @return: void
  */
-void GameState::setMarioAndFireballPositions()
+void GameState::initMarioAndFireballPositions()
 {
-    marioSprite.setPosition(mario.getXPosition(), mario.getYPosition());
-    fireballSprite.setPosition(enemy.getXPosition(), enemy.getYPosition());
+    marioSprite.setPosition(mario.getXPos(), mario.getYPos());
+    fireballSprite.setPosition(enemy.getXPos(), enemy.getYPos());
 
-} // End of setMarioAndFireballPositions
+} // End of initMarioAndFireballPositions
 
 
 /*
@@ -149,14 +155,15 @@ int GameState::finalScore = 0;
 
 
 /*
- * Sets the final Score of mario
+ *  Initializes the final Score of mario
  *  @parm   : none
  *  @return : none
  */
-void GameState::setFinalScore()
+void GameState::initFinalScore()
 {
     finalScore = mario.getScore();
-} // End of setFinalScore
+
+} // End of initFinalScore
 
 
 /*
@@ -167,15 +174,16 @@ void GameState::setFinalScore()
 int GameState::getFinalScore()
 {
     return finalScore;
+
 } // End of getFinalScore
 
 
 /*
- *  Draws all the sprites used in the game to be drawn to the window
+ *  Draws all the sprites used in the gameState to be drawn to the window
  *  @parm  : the address of the render window
  *  @return: void
  */
-void GameState:: drawSprites(sf::RenderWindow &window)
+void GameState::drawSprites(sf::RenderWindow &window)
 {
     window.draw(backgroundSprite);
     window.draw(marioSprite);
@@ -190,7 +198,7 @@ void GameState:: drawSprites(sf::RenderWindow &window)
  *  @parm  : none
  *  @return: void
  */
-void GameState:: updatePlayerHealth()
+void GameState::updatePlayerHealth()
 {
     health.setString(std::to_string(mario.getHealth()));
 
@@ -202,7 +210,7 @@ void GameState:: updatePlayerHealth()
  *  @parm  : none
  *  @return: void
  */
-void GameState:: updatePlayerScore()
+void GameState::updatePlayerScore()
 {
     score.setString(std::to_string(mario.getScore()));
 
@@ -215,9 +223,9 @@ void GameState:: updatePlayerScore()
  *  @parm  : none
  *  @return: void
  */
-void GameState:: runLogic()
+void GameState::runLogic()
 {
-    setMarioAndFireballPositions();
+    initMarioAndFireballPositions();
 
     // Player movement logic to keep track of
     mario.processInput(marioSprite);
@@ -227,7 +235,7 @@ void GameState:: runLogic()
     // Enemy movement logic to keep track of
     enemy.moveCorrectly();
 
-    // Updates to the game
+    // Updates to the gameState
 
     if(enemy.collidesWithPlayer(marioSprite, fireballSprite)) // If the fireball hits the mario
     {
@@ -245,12 +253,12 @@ void GameState:: runLogic()
 
 
 /*
- * Checks if we need to transition to the GAME OVER state by checking
- * if the game is over or not
+ * Checks if we need to transition to the GAME OVER manager by checking
+ * if the gameState is over or not
  * @parm  : none
  * @return: boolean
  */
-bool GameState:: isOver()
+bool GameState::isOver()
 {
     if(mario.getHealth() == 0)
         return true;
@@ -261,7 +269,7 @@ bool GameState:: isOver()
 
 
 /*
- * Resets all the game's attributes for when the mario wants to play the game again
+ * Resets all the gameState's attributes for when the mario wants to play the gameState again
  * @parm  : none
  * @return: void
  */

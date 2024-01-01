@@ -1,3 +1,9 @@
+////////////////////////////////////////////////////////////////////
+// Title      : MainMenuState.cpp
+// Author     : David Betanzos
+// Description: Implements all methods declared in
+//              MainMenuState.h.
+////////////////////////////////////////////////////////////////////
 #include "../headers/MainMenuState.h"
 
 
@@ -8,7 +14,7 @@
  */
 void MainMenuState::loadFont()
 {
-    if(!bobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\boba_milky\\Boba Milky.ttf"))
+    if(!bobaMilky.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\boba_milky\\Boba Milky.ttf"))
        std::cout << "Failed to load font!" << std::endl;
 
 } // End of loadFont
@@ -21,24 +27,24 @@ void MainMenuState::loadFont()
  */
 void MainMenuState::loadTextures()
 {
-    if(!marioImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuState_Images\\Mario.png"))
+    if(!marioImage.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\Images\\MainMenuState_Images\\Mario.png"))
         std::cout << "Failed to load main menu mario image" << std::endl;
-    if(!startButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuState_Images\\StartButton.png"))
+    if(!startButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\Images\\MainMenuState_Images\\StartButton.png"))
         std::cout << "Failed to load start button image" << std::endl;
-    if(!background.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuState_Images\\MainMenuBackground.png"))
+    if(!background.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\Images\\MainMenuState_Images\\MainMenuBackground.png"))
         std::cout << "Failed to load background image" << std::endl;
-    if(!exitButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\My GAME\\Images\\MainMenuState_Images\\ExitButton.png"))
+    if(!exitButton.loadFromFile("C:\\Users\\david\\OneDrive - Florida Gulf Coast University\\COP 3003\\Mario Fireball Game\\Images\\MainMenuState_Images\\ExitButton.png"))
         std::cout << "Failed to load exit button" << std::endl;
 
 } // End of loadTextures
 
 
 /*
- * Sets the texts to be used in the main menu screen
+ * Initializes the texts to be used in the main menu screen
  * @parm  : none
  * @return: void
  */
-void MainMenuState:: setTexts()
+void MainMenuState:: initTexts()
 {
     videoGameText.setFont(bobaMilky);
     videoGameText.setPosition(155.f, 150.f);
@@ -46,7 +52,7 @@ void MainMenuState:: setTexts()
     videoGameText.setFillColor(sf::Color::White);
     videoGameText.setString("MARIO FIREBALL");
 
-} // End of setTexts
+} // End of initTexts
 
 
 /*
@@ -55,7 +61,7 @@ void MainMenuState:: setTexts()
  * @parm  : none
  * @return: void
  */
-void MainMenuState::setSprites()
+void MainMenuState::initSprites()
 {
     // Mario main menu sprite
     marioImageSprite.setTexture(marioImage);
@@ -84,7 +90,7 @@ void MainMenuState::setSprites()
 
     backgroundSprite.setScale(scaleX, scaleY);
 
-} // End of setSprites
+} // End of initSprites
 
 
 /*
@@ -115,9 +121,9 @@ void MainMenuState::drawTexts(sf::RenderWindow &window)
 
 
 /*
- * Checks if we need to transition to the GAME state by checking if the user
+ * Checks if we need to transition to the GAME manager by checking if the user
  * wants to press start. If the user presses the "start" button, then the transition
- * to the GAME state will be true and false otherwise
+ * to the GAME manager will be true and false otherwise
  *
  * @parm  : The address of the render window
  * @return: Boolean
@@ -137,9 +143,9 @@ bool MainMenuState::startButtonIsPressed(sf::RenderWindow &window)
 
 
 /*
- * Checks if we need to transition to the CLOSE GAME state by checking if the user
+ * Checks if we need to transition to the CLOSE GAME manager by checking if the user
  * presses "exit" . If the user presses the "exit" button, then the transition
- * to the CLOSE GAME state will be true and false otherwise
+ * to the CLOSE GAME manager will be true and false otherwise
  *
  * @parm  : The address of the render window
  * @return: Boolean
