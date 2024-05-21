@@ -18,4 +18,9 @@ CLion IDE.<p>
 <p> The paths for the font, textures, and sprites are local to my computer. You would have to change the path to where they are located on your computer. Also, for CMake, the path can vary depending on where you have the directory for SFML.</p> 
 
 ## Game Demo
-https://github.com/davidb200/MARIO-FIREBALL-GAME/assets/101841853/820c6af2-25d5-4d94-af01-7916e68da00a
+<div class="video-container">
+        <video width="675" height="300" controls>
+            <source src="https://github.com/davidb200/MARIO-FIREBALL-GAME/assets/101841853/820c6af2-25d5-4d94-af01-7916e68da00a" type="video/mp4">
+            Browser does not support video
+        </video>
+</div>
